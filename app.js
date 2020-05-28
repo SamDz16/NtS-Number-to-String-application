@@ -34,10 +34,10 @@ var number_to_string = function(num){
 
         return number_string;
 
-    }else if (typeof(num) == 'string'){
+    }else if (isNaN(num)){
         return -1;
 
-    }else return "N'est pas compris entre 0 et 999";
+    }else return "n'est pas compris entre 0 et 999";
 };
 
 
@@ -61,9 +61,9 @@ btn.addEventListener('click', function(){
 
     var result = number_to_string(parseInt(input.value, 10));
     if ( result == -1){
-        output.value = input.value + " is Nan - Not a Number";
+        output.value = input.value + " : n'est pas un nombre";
     }else{
-        output.value = input.value + ' => ' + result;
+        output.value = input.value + ' : ' + result;
     }
 
     // document.querySelector('#input .input-text').value = "";
